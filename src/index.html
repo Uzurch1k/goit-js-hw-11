@@ -8,11 +8,38 @@
 
     <link rel="stylesheet" href="./css/styles.css" />
   </head>
+
   <body>
+    <section class="wrpaper">
+      <div class="container">
+        <form class="gallery-form">
+          <input
+            type="text"
+            name="text"
+            placeholder="Search images..."
+            class="gallery-input"
+          />
+          <button type="submit" class="gallery-btn">Search</button>
+        </form>
 
-    <section></section>
-    <!-- <load ="partials/vite-promo.html" /> -->
+        <span class="loader"></span>
 
-    <script type="module" src="./js/main.js"></script>
+        <div class="gallery-content">
+          <ul class="gallery-list">
+            <li class="gallery-item">
+              <img
+                class="gallery-image"
+                src="${}"
+                data-source="${}"
+                alt="${}"
+              />
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <load ="partials/circles.html" />
+    <script type="module" src="./js/gallery.js"></script>
   </body>
 </html>
