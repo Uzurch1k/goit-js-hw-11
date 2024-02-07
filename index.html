@@ -8,9 +8,9 @@
 
     
     <script type="module" crossorigin src="/goit-js-hw-11/commonHelpers.js"></script>
-    <link rel="modulepreload" crossorigin href="/goit-js-hw-11/assets/vendor-60237e46.js">
+    <link rel="modulepreload" crossorigin href="/goit-js-hw-11/assets/vendor-38388549.js">
     <link rel="stylesheet" href="/goit-js-hw-11/assets/vendor-a51daae5.css">
-    <link rel="stylesheet" href="/goit-js-hw-11/assets/index-ae93c7bc.css">
+    <link rel="stylesheet" href="/goit-js-hw-11/assets/index-33fe71d5.css">
   </head>
 
   <body>
@@ -28,18 +28,34 @@
 
         <span class="loader"></span>
 
-        <div class="gallery-content">
-          <ul class="gallery-list">
-            <li class="gallery-item">
-              <img
-                class="gallery-image"
-                src="${}"
-                data-source="${}"
-                alt="${}"
-              />
-            </li>
-          </ul>
-        </div>
+        <ul class="gallery-list">
+          <li class="gallery-item">
+            <img
+              class="gallery-image"
+              src="${webformatURL}"
+              data-source="${largeImageURL}"
+              alt="${tags}"
+            />
+            <ul class="specific-list">
+              <li class="specific-item">
+                <p class="specific-text">Likes</p>
+                <p class="specific-quantity">${likes}</p>
+              </li>
+              <li class="specific-item">
+                <p class="specific-text">Views</p>
+                <p class="specific-quantity">${views}</p>
+              </li>
+              <li class="specific-item">
+                <p class="specific-text">Comments</p>
+                <p class="specific-quantity">${comments}</p>
+              </li>
+              <li class="specific-item">
+                <p class="specific-text">Downloads</p>
+                <p class="specific-quantity">${downloads}</p>
+              </li>
+            </ul>
+          </li>
+        </ul>
       </div>
     </section>
 
