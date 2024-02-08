@@ -59,8 +59,9 @@ function onFormSubmit(e) {
     iziToast.warning(optionsIziToastWarning);
     return;
   }
-
   gallery.innerHTML = '';
+
+  showLoader();
 
   searchGallery(text)
     .then(data => {
@@ -70,7 +71,8 @@ function onFormSubmit(e) {
       }
       renderGallery(data.hits);
     })
-    .catch(err => console.error('Error loading data:', err));
+    .catch(err => console.error('Error loading data:', err))
+    .finally(hideLoader);
 
   form.reset();
 }
@@ -87,17 +89,13 @@ function searchGallery(request) {
 
   const url = BASE_URL + END_POINT + PARAMS;
 
-  showLoader();
-
-  return fetch(url)
-    .then(res => {
-      if (res.ok) {
-        return res.json();
-      } else {
-        throw new Error(res.status);
-      }
-    })
-    .finally(hideLoader);
+  return fetch(url).then(res => {
+    if (res.ok) {
+      return res.json();
+    } else {
+      throw new Error(res.status);
+    }
+  });
 }
 
 // ================================================================
