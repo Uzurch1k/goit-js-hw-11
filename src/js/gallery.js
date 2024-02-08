@@ -55,19 +55,22 @@ function onFormSubmit(e) {
   const text = form.elements.text.value.trim();
 
   if (!text) {
+    form.reset();
     iziToast.warning(optionsIziToastWarning);
     return;
   }
 
   gallery.innerHTML = '';
 
-  searchGallery(text).then(data => {
-    if (data.hits.length === 0) {
-      iziToast.warning(optionsIziToastError);
-      return;
-    }
-    renderGallery(data.hits);
-  });
+  searchGallery(text)
+    .then(data => {
+      if (data.hits.length === 0) {
+        iziToast.warning(optionsIziToastError);
+        return;
+      }
+      renderGallery(data.hits);
+    })
+    .catch(err => console.error('Error loading data:', err));
 
   form.reset();
 }
