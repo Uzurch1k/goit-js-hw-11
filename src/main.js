@@ -1,4 +1,4 @@
-// ================================================================
+// ===============================================================
 
 import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
@@ -6,7 +6,7 @@ import 'simplelightbox/dist/simple-lightbox.min.css';
 import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
 
-// ================================================================
+// ===============================================================
 
 const optionsIziToastWarning = {
   message: 'Please fill out the input field.',
@@ -38,7 +38,7 @@ const optionsIziToastError = {
   maxWidth: 400,
 };
 
-// ================================================================
+// ===============================================================
 
 const form = document.querySelector('.gallery-form');
 
@@ -46,7 +46,7 @@ const loader = document.querySelector('.loader');
 
 const gallery = document.querySelector('.gallery-list');
 
-// ================================================================
+// ===============================================================
 
 form.addEventListener('submit', onFormSubmit);
 
@@ -98,7 +98,7 @@ function searchGallery(request) {
   });
 }
 
-// ================================================================
+// ===============================================================
 
 function templateGallery(dataGallery) {
   return dataGallery
@@ -152,7 +152,7 @@ function renderGallery(dataGallery) {
   lightbox.refresh();
 }
 
-// ================================================================
+// ===============================================================
 
 function showLoader() {
   loader.classList.add('in-active');
@@ -162,4 +162,4 @@ function hideLoader() {
   loader.classList.remove('in-active');
 }
 
-// ================================================================
+// ===============================================================
